@@ -4,9 +4,8 @@ require 'fileutils'
 load File.dirname(__FILE__) + '/../../../bin/jspec'
 
 def jspec name, *args
-  capture do
-    command(name).run *args
-  end
+  #command(name).run *args
+  `jspec #{name.to_s} #{args.join(' ')}`
 end
 
 def capture &block
